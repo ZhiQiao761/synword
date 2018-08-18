@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Synonyms</title>
+</head>
+<body>
+<h1>Synonyms</h1>
+
+<h2>Drag-n-drop a word file</h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p>
+    <button type="submit">Upload & Analyze</button>
+  </p>
+</form>
+{% if modified_text %}
+  <h3>Original text</h3>
+  <pre>{{ original_text|safe }}</pre>
+  <h3>Modified text</h3>
+  <pre>{{ modified_text|safe }}</pre>
+{% endif %}
+</body>
+</html>
