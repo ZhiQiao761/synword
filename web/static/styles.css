@@ -1,0 +1,78 @@
+#content-wrapper {
+  width: 80%;
+  margin: 0.6em auto;
+  background: #83d2bf;
+  padding: .6em;
+  border-radius: .6em;
+}
+
+h1 {
+  font-size: 150%;
+  font-weight: bold;
+  margin: 1em 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 125%;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+form {
+  padding: .3em;
+}
+
+form input {
+  font-size: 100%;
+  vertical-align: text-top;
+  line-height: .6em;
+}
+
+form p {
+  margin: .6em;
+  text-align: center;
+  font-size: 125%;
+}
+
+form .buttons {
+  margin-top: 2em;
+  text-align: center;
+}
+
+form .buttons button {
+  font-size: 100%;
+  padding: 0.6em;
+  border-radius: 0.5em;
+}
+
+#drop-zone {
+  padding: .6em;
+  border: 1px solid #646464;
+  border-radius: .6em;
+  height: 4em;
+}
+
+.block {
+  background: #e5f6f2;
+  border-radius: .6em;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.block:first-child {
+  margin-top: 0;
+}
+
+.block h3 {
+  background: #a5dfd2;
+  padding: 0.8em;
+  font-size: 103%;
+  border-radius: 0.4em;
+  text-align: center;
+}

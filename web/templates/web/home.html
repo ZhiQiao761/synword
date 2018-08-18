@@ -1,26 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Synonyms</title>
+  <link rel="stylesheet" href="{% static "reset.css" %}">
+  <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
 <body>
 <h1>Synonyms</h1>
+<div id="content-wrapper">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p class="buttons">
+      <button type="submit">Upload & Analyze</button>
+    </p>
+  </form>
+  {% if modified_text %}
+    <div class="block">
+      <h3>Original text</h3>
+      <pre>{{ original_text|safe }}</pre>
+    </div>
 
-<h2>Drag-n-drop a word file</h2>
-
-<form action="" method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <p>
-    <button type="submit">Upload & Analyze</button>
-  </p>
-</form>
-{% if modified_text %}
-  <h3>Original text</h3>
-  <pre>{{ original_text|safe }}</pre>
-  <h3>Modified text</h3>
-  <pre>{{ modified_text|safe }}</pre>
-{% endif %}
+    <div class="block">
+      <h3>Modified text</h3>
+      <pre>{{ modified_text|safe }}</pre>
+    </div>
+  {% endif %}
+</div>
 </body>
 </html>
