@@ -16,4 +16,4 @@ class UploadForm(forms.Form):
 
     @cached_property
     def supported_exts(self):
-        return ['.docx']
+        return ['.docx', '.txt']

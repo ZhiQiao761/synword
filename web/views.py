@@ -1,4 +1,5 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
+from django.template import RequestContext
 from django.views.generic import FormView
 
 from web.forms import UploadForm
@@ -10,10 +11,14 @@ class HomeView(FormView):
     form_class = UploadForm
 
     def form_valid(self, form):
-        text = extract_text(form.cleaned_data['file'].file)
-        modified_text = modify(text)
+        try:
+            text = extract_text(form.cleaned_data['file'])
+            modified_text = modify(text)
+        except Exception as e:
+            text = f'Cannot parse file ({e}).'
+            modified_text = None
         ctx = self.get_context_data(
             original_text=text,
             modified_text=modified_text
         )
-        return render_to_response('web/home.html', ctx)
+        return render(self.request, 'web/home.html', ctx)

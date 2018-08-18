@@ -17,12 +17,13 @@
       <button type="submit">Upload & Analyze</button>
     </p>
   </form>
-  {% if modified_text %}
+  {% if original_text %}
     <div class="block">
       <h3>Original text</h3>
       <pre>{{ original_text|safe }}</pre>
     </div>
-
+  {% endif %}
+  {% if modified_text %}
     <div class="block">
       <h3>Modified text</h3>
       <pre>{{ modified_text|safe }}</pre>
